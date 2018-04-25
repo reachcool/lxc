@@ -118,24 +118,24 @@ the route of host
 ```
 ubuntu@box2:~$ route -n
 Kernel IP routing table
-Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
-0.0.0.0         10.0.2.2        0.0.0.0         UG    0      0        0 enp0s3
-10.0.0.0        0.0.0.0         255.255.255.0   U     0      0        0 vmbr0
-10.0.2.0        0.0.0.0         255.255.255.0   U     0      0        0 enp0s3
-10.0.2.100      0.0.0.0         255.255.255.255 UH    0      0        0 mvlan0
-10.0.3.0        0.0.0.0         255.255.255.0   U     0      0        0 lxcbr0
-192.168.56.0    0.0.0.0         255.255.255.0   U     0      0        0 enp0s8
-192.168.57.0    0.0.0.0         255.255.255.0   U     0      0        0 enp0s9
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface<br>
+0.0.0.0         10.0.2.2        0.0.0.0         UG    0      0        0 enp0s3<br>
+10.0.0.0        0.0.0.0         255.255.255.0   U     0      0        0 vmbr0<br>
+10.0.2.0        0.0.0.0         255.255.255.0   U     0      0        0 enp0s3<br>
+10.0.2.100      0.0.0.0         255.255.255.255 UH    0      0        0 mvlan0<br>
+10.0.3.0        0.0.0.0         255.255.255.0   U     0      0        0 lxcbr0<br>
+192.168.56.0    0.0.0.0         255.255.255.0   U     0      0        0 enp0s8<br>
+192.168.57.0    0.0.0.0         255.255.255.0   U     0      0        0 enp0s9<br>
 ```
 note, that should add a route to the lxc ct on the mvlan0, and del the 10.0.0.0/8 route on the mvlan0
 the route of the lxc ct
 ```
 root@vm1:~# route -n
 Kernel IP routing table
-Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
-0.0.0.0         10.0.2.2        0.0.0.0         UG    0      0        0 eth1
-10.0.0.0        0.0.0.0         255.255.255.0   U     0      0        0 eth0
-10.0.0.0        0.0.0.0         255.0.0.0       U     0      0        0 eth1
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface<br>
+0.0.0.0         10.0.2.2        0.0.0.0         UG    0      0        0 eth1<br>
+10.0.0.0        0.0.0.0         255.255.255.0   U     0      0        0 eth0<br>
+10.0.0.0        0.0.0.0         255.0.0.0       U     0      0        0 eth1<br>
 ```
 modify the gw to the same as the host, so that can access the network through NAT of the virtulBOX.
 
